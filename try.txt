@@ -1,12 +1,10 @@
 HEHEHE
 asda
-<<<<<<< HEAD
 HHIHSSADKBKBS
-=======
 1
 2
 3
 3
 4
 5
->>>>>>> cdb7150804c2aa19fd3e8fb59401d8d7c613f06b
+g
