@@ -12,3 +12,16 @@ Log:
     prior local branch.
 - index.php created
 - DBConnection (dbcon.php)
+
+08/20/2021
+Tech Stack:
+>> Client Side: HTML, CSS, and Javascript
+>> Server Side: 
+    Web Framework == AngularJS
+    Database == MySQL
+    Programming Language == PHP 
+    "Angular JS will be your front-end and PHP will be the backend scripting and the database will be MySql"
+
+Added:  App Folder >> API, Controllers, Core
+        Config Folder >>
+        Library Folder >> 
