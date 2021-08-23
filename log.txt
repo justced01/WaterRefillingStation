@@ -1,0 +1,10 @@
+08/23 (local branch)
+- Added DBConnect in Application.php
+- Created wrs_db
+- Created personnel table
+- inserted data to personnel table
+- created table in HTML
+- feature: read the database from wrs_db
+- created button for edit, delete and create
+- create_new_personnel.php
+    -
