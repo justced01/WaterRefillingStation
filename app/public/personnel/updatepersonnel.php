@@ -45,7 +45,7 @@
 
 <?php include_once "../../views/personnel/header.php" ?>
 
-    <h1>Update Personnel Profile (version .1000)</h1>
+    <h1>Update Personnel Profile (version 1.1)</h1>
     <a href="index.php" type="button" class="btn btn-secondary">Go Back</a>
 
     <?php if (!empty($errors)): ?>

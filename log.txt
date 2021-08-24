@@ -18,3 +18,5 @@
 - added search function
 - added header.php
 - applied Project Structure
+- added profile picture input
+- created table for customer
