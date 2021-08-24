@@ -1,5 +1,5 @@
 <?php
-    include "../core/Application.php"; //Connect to wrs_db
+    require_once "../../core/Application.php"; //Connect to wrs_db
 
     $errors = []; //Global variables
     $fname = '';
@@ -32,20 +32,11 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include_once "../../views/personnel/header.php" ?>
 
-     <!-- Bootstrap CSS -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
-    <title>Form(Create Data in Database)</title>
-</head>
-<body>
     <h1>Create New Personnel Profile (version .1000)</h1>
+
+    <a href="index.php" type="button" class="btn btn-secondary">Go Back</a>
 
     <?php if (!empty($errors)): ?>
         <div class="alert alert-danger">
@@ -54,7 +45,6 @@
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
-
 
     <form action="" method="post"> <!--do not use "get" when getting username and password-->
         <div class="form-group">
@@ -70,9 +60,7 @@
             <input type="email" name="email" class="form-control" value="<?php echo $email ?>" >
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a href="../core/Database.php" type="button" class="btn btn-secondary">Home</a>
     </form>
-
 
 </body>
 </html>

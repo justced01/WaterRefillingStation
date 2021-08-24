@@ -7,11 +7,10 @@
     }
 
     try{
-        $SQL = "CREATE DATABASE wrs_db";
+        $SQL = "CREATE DATABASE IF NOT EXISTS wrs_db";
         $PDO->exec($SQL);
-        echo "Database created successfully.";
+        //echo "Database created successfully.";
     } catch(PDOException $error){
         die("Error: Could not able to execute $SQL." . $error->getMessage());
     }
-
 ?>

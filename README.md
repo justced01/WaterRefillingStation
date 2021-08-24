@@ -17,10 +17,10 @@ Log:
 Tech Stack:
 >> Client Side: HTML, CSS, and Javascript
 >> Server Side: 
-    Web Framework == AngularJS
+    Web Framework == ReactJS
     Database == MySQL
     Programming Language == PHP 
-    "Angular JS will be your front-end and PHP will be the backend scripting and the database will be MySql"
+    "ReactJS will be your front-end and PHP will be the backend scripting and the database will be MySql"
 
 Added:  App Folder >> API, Controllers, Core
         Config Folder >>

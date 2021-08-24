@@ -8,3 +8,13 @@
 - created button for edit, delete and create
 - create_new_personnel.php
     -
+- feature: create/add function in database
+- form validation
+
+08/24
+- fixed creating database
+- added delete function
+- added update(edit) function
+- added search function
+- added header.php
+- applied Project Structure
