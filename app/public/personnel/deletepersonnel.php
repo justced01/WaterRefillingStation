@@ -7,7 +7,7 @@
         exit;
     }
 
-    $statement = $PDO->prepare('DELETE FROM personnel WHERE id = :id');
+    $statement = $DB_con->prepare('DELETE FROM personnel WHERE id = :id');
     $statement->bindValue(':id', $id);
     $statement->execute();
 

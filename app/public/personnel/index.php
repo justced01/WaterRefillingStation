@@ -4,10 +4,10 @@
     //search
     $search = $_GET['search'] ?? '';
     if ($search) {
-        $statement = $PDO->prepare('SELECT * FROM personnel WHERE lname LIKE :lname ORDER BY created_at DESC');
+        $statement = $DB_con->prepare('SELECT * FROM personnel WHERE lname LIKE :lname ORDER BY created_at DESC');
         $statement->bindValue(':lname',"%$search%");
     } else {
-        $statement = $PDO->prepare('SELECT * FROM personnel ORDER BY created_at DESC');
+        $statement = $DB_con->prepare('SELECT * FROM personnel ORDER BY created_at DESC');
     }
     $statement->execute();
     $personnel = $statement->fetchall(PDO::FETCH_ASSOC);

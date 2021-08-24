@@ -7,7 +7,7 @@
         exit;
     }
 
-    $statement = $PDO->prepare('SELECT * FROM personnel WHERE id = :id');
+    $statement = $DB_con->prepare('SELECT * FROM personnel WHERE id = :id');
     $statement->bindValue(':id',$id);
     $statement->execute();
     $personnel = $statement->fetch(PDO::FETCH_ASSOC);
@@ -33,7 +33,7 @@
         }
 
         if (empty($errors)) {
-            $statement = $PDO->prepare("UPDATE personnel SET fname = :fname, lname = :lname, email = :email  WHERE id = :id");
+            $statement = $DB_con->prepare("UPDATE personnel SET fname = :fname, lname = :lname, email = :email  WHERE id = :id");
             $statement->bindValue(':fname',$fname);
             $statement->bindValue(':lname',$lname);
             $statement->bindValue(':email',$email);

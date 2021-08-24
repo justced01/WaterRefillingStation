@@ -52,7 +52,7 @@
                 
             }
 
-            $statement = $PDO->prepare("INSERT INTO personnel(profilepic, fname, lname, email , created_at) 
+            $statement = $DB_con->prepare("INSERT INTO personnel(profilepic, fname, lname, email , created_at) 
                 VALUES (:profilepic, :fname, :lname, :email, :date)");
             $statement->bindValue(':profilepic',$usrimg);
             $statement->bindValue(':fname',$fname);

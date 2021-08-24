@@ -13,6 +13,7 @@
             )";
         $SQL = "ALTER TABLE personnel
             ADD IF NOT EXISTS profilepic VARCHAR(2048) NOT NULL,
+            -- ADD IF NOT EXISTS 'status' BOOLEAN for deleting status
             ADD IF NOT EXISTS created_at timestamp DEFAULT CURRENT_TIMESTAMP";
         $PDO->exec($SQL);
         //echo "Table created successfully" . '<br>';

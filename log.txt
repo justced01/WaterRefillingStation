@@ -20,3 +20,7 @@
 - applied Project Structure
 - added profile picture input
 - created table for customer
+- modified dbconnection, create db
+tasks: 
+- need to modify delete function whereas the deleted data should be seen in database but not in web
+- functions (OOP)
