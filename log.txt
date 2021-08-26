@@ -34,3 +34,4 @@ tasks:
 
 08/26
 - updating sql query
+- img upload fixed except updating

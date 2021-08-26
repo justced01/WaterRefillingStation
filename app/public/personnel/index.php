@@ -31,9 +31,9 @@
                 <tr>
                     <th scope="row"><?php echo $i//increment, index start 1?></th>
                     <td>
-                        
-                        <img src="<?php echo $personnel['profilepic'] ?>" class="thumb-image">
-                       
+                        <?php if ($personnel['profilepic']): ?>
+                            <img src="./picture/<?php echo $personnel['profilepic'] ?>" class="thumb-image"> 
+                        <?php endif; ?>
                     </td>
                     <td><?php echo $personnel['fname'] ?></td>
                     <td><?php echo $personnel['lname'] ?></td>
@@ -41,7 +41,7 @@
                     <td><?php echo $personnel['created_at'] ?></td>
                     <td>
                         <a href="updatepersonnel.php?id=<?php echo $personnel['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
-                        <form style="display: inline-block" method="post" action="../../controllers/deletepersonnel.php">
+                        <form style="display: inline-block" method="post" action="../../controllers/deletepersonnel_controller.php">
                             <input type="hidden" name="id" value="<?php echo $personnel['id']?>">
                             <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                         </form>

@@ -3,7 +3,7 @@
 
     $id = $_GET['id'] ?? null;
     if (!$id) {
-        header ('Location: index.php');
+        header ('Location: ../personnel/index.php');
         exit;
     }
 
@@ -35,16 +35,17 @@
         if (empty($errors)) {
             $usrimg = $_FILES['profilepic'] ?? null;
             $usrimg = '';
-
-            if ($personnel['profilepic']){
-                unlink($personnel['profilepic']);
-            }
+  
             if ($usrimg && $usrimg['tmp_name']) {
                 $imgFile = $_FILES['profilepic']['name'];
                 $tmp_dir = $_FILES['profilepic']['tmp_name'];
                 $imgSize = $_FILES['profilepic']['size'];
+
+                if ($personnel['profilepic']){
+                    unlink(__DIR__.'../personnel/picture/'.$personnel['profilepic']);
+                }
                     
-                $upload_dir = 'picture/'; // upload directory
+                $upload_dir = '../personnel/picture/'; // upload directory
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
                 // valid image extensions
                 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
@@ -73,7 +74,7 @@
             $statement->bindValue(':email',$email);
             $statement->bindValue(':id',$id);
             $statement->execute();
-            header('Location: index.php');
+            header('Location: ../personnel/index.php');
         }
     }
 ?>

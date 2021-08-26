@@ -12,9 +12,8 @@
             prsnnl_img VARCHAR(255) NOT NULL,
             birthday DATE NOT NULL,
             validID VARCHAR(255) NOT NULL,
-            
             created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-            updated_at timestamp DEFAULT CURRENT_TIMESTAMP,
+            updated_at timestamp DEFAULT CURRENT_TIMESTAMP
             -- personnel_status for deleting
             )";
         // $SQL = "ALTER TABLE personnel

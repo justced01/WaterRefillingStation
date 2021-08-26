@@ -29,7 +29,7 @@
                 $tmp_dir = $_FILES['profilepic']['tmp_name'];
                 $imgSize = $_FILES['profilepic']['size'];
                 
-                $upload_dir = './public/picture/'; // upload directory
+                $upload_dir = '../personnel/picture/'; // upload directory
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
                 // valid image extensions
                 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
@@ -49,7 +49,7 @@
                         $statement->bindValue(':email',$email);
                         $statement->bindValue(':date',$date);
                         $statement->execute();
-                        header('Location: index.php');
+                        header('Location: ../personnel/index.php');
                     }
                     else{
                         $errors[] = 'Sorry, your file is too large.';

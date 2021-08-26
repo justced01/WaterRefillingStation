@@ -14,7 +14,7 @@
 
     <form action="" method="post"> <!--do not use "get" when getting username and password-->
         <?php if ($personnel['profilepic']): ?>
-            <img src="<?php echo $personnel['profilepic'] ?>" class="update-image">
+            <img src="./picture/<?php echo $personnel['profilepic'] ?>" class="update-image">
         <?php endif; ?>
         <div class="form-group">
             <label>Profile Picture</label>
