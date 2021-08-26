@@ -25,4 +25,12 @@ tasks:
 - need to modify delete function whereas the deleted data should be seen in database but not in web
 - functions (OOP)
 - need to fix the uploaded image in edit functions
-- 
+
+08/25
+tasks: 
+- need to modify delete function whereas the deleted data should be seen in database but not in web
+- functions (OOP)
+- need to fix the uploaded image in edit functions >> specifically uploading and updating images
+
+08/26
+- updating sql query

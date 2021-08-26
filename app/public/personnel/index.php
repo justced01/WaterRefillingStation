@@ -1,18 +1,4 @@
-<?php   
-    require_once "../../core/Application.php"; //Connect to wrs_db
-
-    //search
-    $search = $_GET['search'] ?? '';
-    if ($search) {
-        $statement = $DB_con->prepare('SELECT * FROM personnel WHERE lname LIKE :lname ORDER BY created_at DESC');
-        $statement->bindValue(':lname',"%$search%");
-    } else {
-        $statement = $DB_con->prepare('SELECT * FROM personnel ORDER BY created_at DESC');
-    }
-    $statement->execute();
-    $personnel = $statement->fetchall(PDO::FETCH_ASSOC);
-?>
-
+<?php require_once "../../controllers/searchpersonnel_controller.php"; ?>
 <?php include_once "../../views/personnel/header.php" ?>
 
     <h1>Personnel Table (version 1.1)</h1>
@@ -44,14 +30,18 @@
             <?php foreach ($personnel as $i => $personnel): //$i is for index ?> 
                 <tr>
                     <th scope="row"><?php echo $i//increment, index start 1?></th>
-                    <td><?php echo $personnel['profilepic'] ?></td>
+                    <td>
+                        
+                        <img src="<?php echo $personnel['profilepic'] ?>" class="thumb-image">
+                       
+                    </td>
                     <td><?php echo $personnel['fname'] ?></td>
                     <td><?php echo $personnel['lname'] ?></td>
                     <td><?php echo $personnel['email'] ?></td>
                     <td><?php echo $personnel['created_at'] ?></td>
                     <td>
                         <a href="updatepersonnel.php?id=<?php echo $personnel['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
-                        <form style="display: inline-block" method="post" action="deletepersonnel.php">
+                        <form style="display: inline-block" method="post" action="../../controllers/deletepersonnel.php">
                             <input type="hidden" name="id" value="<?php echo $personnel['id']?>">
                             <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                         </form>

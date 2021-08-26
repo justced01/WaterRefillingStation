@@ -3,7 +3,7 @@
     $DB_USERNAME = 'root';
     $DB_PASSWORD = '';
     $DB_NAME = 'wrs_db';
-    $DB_con = null;
+    //$DB_con = null;
 
     $DB_con = new PDO("mysql:host=$DB_HOST", $DB_USERNAME, $DB_PASSWORD);
     $DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
