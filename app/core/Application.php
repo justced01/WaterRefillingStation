@@ -12,8 +12,8 @@
         $DB_con = new PDO("mysql:host={$DB_HOST};dbname={$DB_NAME}",$DB_USERNAME,$DB_PASSWORD);
         $DB_con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
-    catch(PDOException $e){
-        echo $e->getMessage();
+    catch(PDOException $error){
+        echo $error->getMessage();
     }
 
     $DB_con->exec("CREATE DATABASE IF NOT EXISTS $DB_NAME;");

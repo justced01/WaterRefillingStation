@@ -1,0 +1,15 @@
+{
+    "name": "jcedd/library",
+    "autoload": {
+        "psr-4": {
+            "Jcedd\\Library\\": "./src"
+        }
+    },
+    "authors": [
+        {
+            "name": "justced",
+            "email": "jced.delacarcel@gmail.com"
+        }
+    ],
+    "require": {}
+}

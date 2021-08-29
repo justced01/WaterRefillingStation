@@ -3,12 +3,12 @@
 
     $id = $_POST['id'] ?? null;
     if (!$id) {
-        header ('Location: ../public/personnel/index.php');
+        header ('Location: ../public/user/index.php');
         exit;
     }
 
     $statement = $DB_con->prepare('DELETE FROM personnel WHERE id = :id');
     $statement->bindValue(':id', $id);
     $statement->execute();
-    header("Location: ../public/personnel/index.php");
+    header("Location: ../public/user/index.php");
 ?>

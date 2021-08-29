@@ -1,12 +1,11 @@
 <?php 
     require_once "../../core/Application.php"; //Connect to wrs_db
-
     $errors = []; //Global variables
     $fname = '';
     $lname = '';
     $email = '';
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') { //only do this if the method is POST
+    
+    if($_SERVER['REQUEST_METHOD'] === 'POST') { //only do this if the method is POST
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $email = $_POST['email'];
@@ -29,7 +28,7 @@
                 $tmp_dir = $_FILES['profilepic']['tmp_name'];
                 $imgSize = $_FILES['profilepic']['size'];
                 
-                $upload_dir = '../personnel/picture/'; // upload directory
+                $upload_dir = '../user/picture/'; // upload directory
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
                 // valid image extensions
                 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
@@ -49,7 +48,7 @@
                         $statement->bindValue(':email',$email);
                         $statement->bindValue(':date',$date);
                         $statement->execute();
-                        header('Location: ../personnel/index.php');
+                        header('Location: ../user/index.php');
                     }
                     else{
                         $errors[] = 'Sorry, your file is too large.';

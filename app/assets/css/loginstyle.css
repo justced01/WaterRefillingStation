@@ -1,0 +1,10 @@
+.content {
+    max-width: 400px;
+    margin: auto;
+    padding-top: 0px;
+}
+
+.title {
+    padding-top: 100px;
+    text-align: center;
+}

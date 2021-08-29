@@ -35,3 +35,6 @@ tasks:
 08/26
 - updating sql query
 - img upload fixed except updating
+
+08/27
+- composer cant function

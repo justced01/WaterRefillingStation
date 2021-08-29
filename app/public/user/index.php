@@ -1,5 +1,7 @@
+<!-- Owner's Personnel Screen List -->
+
 <?php require_once "../../controllers/searchpersonnel_controller.php"; ?>
-<?php include_once "../../views/personnel/header.php" ?>
+<?php include_once "../../views/user/header.php" ?>
 
     <h1>Personnel Table (version 1.1)</h1>
 
@@ -50,5 +52,4 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-</body>
-</html>
+<?php include_once "../../views/user/footer.php" ?>
