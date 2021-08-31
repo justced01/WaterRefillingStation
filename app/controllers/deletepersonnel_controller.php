@@ -1,14 +1,14 @@
 <?php
     require_once "../core/Application.php"; //Connect to wrs_db
 
-    $id = $_POST['id'] ?? null;
-    if (!$id) {
+    $userID = $_POST['userID'] ?? null;
+    if (!$userID) {
         header ('Location: ../public/user/index.php');
         exit;
     }
 
-    $statement = $DB_con->prepare('DELETE FROM personnel WHERE id = :id');
-    $statement->bindValue(':id', $id);
+    $statement = $DB_con->prepare('DELETE FROM personnel WHERE userID = :userID');
+    $statement->bindValue(':userID', $userID);
     $statement->execute();
     header("Location: ../public/user/index.php");
 ?>

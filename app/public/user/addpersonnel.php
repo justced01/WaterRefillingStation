@@ -20,15 +20,15 @@
         <div class="form-group">
             <label>Profile Picture</label>
             <br>
-            <input type="file" name="profilepic" value="<?php echo $usrimg ?>" >
+            <input type="file" name="profpic" value="<?php echo $usrimg ?>" >
         </div>
         <div class="form-group">
             <label>First Name</label>
-            <input type="text" name="fname" class="form-control" value="<?php echo $fname ?>" >
+            <input type="text" name="firstname" class="form-control" value="<?php echo $firstname ?>" >
         </div>
         <div class="form-group">
             <label>Last Name</label>
-            <input type="text" name="lname" class="form-control" value="<?php echo $lname ?>" >
+            <input type="text" name="lastname" class="form-control" value="<?php echo $lastname ?>" >
         </div>
         <div class="form-group">
             <label>Email</label>

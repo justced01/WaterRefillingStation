@@ -14,7 +14,8 @@
             birthday DATE NOT NULL,
             validID VARCHAR(255) NOT NULL,
             profpic VARCHAR(255) NULL,
-            user_status VARCHAR(255) NULL,
+            user_status TINYINT(1) NULL,
+            user_delete TINYINT(1) NULL,
             created_at timestamp DEFAULT CURRENT_TIMESTAMP,
             updated_at timestamp DEFAULT CURRENT_TIMESTAMP
             )";
@@ -33,6 +34,8 @@
             cstmr_address VARCHAR(255) NOT NULL,
             contact_number INT(11) NOT NULL,
             birthday DATE NOT NULL,
+            cstmr_status TINYINT(1) NULL,
+            cstmr_delete TINYINT(1) NULL,
             created_at timestamp DEFAULT CURRENT_TIMESTAMP,
             updated_at timestamp DEFAULT CURRENT_TIMESTAMP
             )";

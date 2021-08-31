@@ -8,3 +8,10 @@
     padding-top: 100px;
     text-align: center;
 }
+
+/* Register Screen */
+.form {
+    margin: auto;
+    max-width: 400px;
+    padding-top: 0px;
+}

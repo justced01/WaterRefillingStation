@@ -1,7 +1,6 @@
 <!-- Login Screen -->
 
-<?php include_once "../views/header.php" ?>
-    
+<?php include_once "../views/header.php" ?> 
     <div class="title"><h1 class="display-1">Water Refilling Station</h1></div>
     <div class="content">
         <h1>Login</h1>
@@ -17,8 +16,9 @@
                 <input type="password" class="form-control" name="password">
             </div>
             <a href="personnel/index.php" type="submit" class="btn btn-primary">Login</a>
-            <span class="fpsw"><a href="/personnel/forgotpassword.php">Forgot password?</a></span>
+            <span class="fpsw"><a href="/personnel/forgotpassword.php">Forgot password?</a></span><br>
+            <p>Not a new member? <a href = "register.php">Sign Up here</a></p>
         </form>
     </div>
 
-<?php include_once "../views/user/footer.php" ?>
+<?php require_once "../views/user/footer.php" ?>

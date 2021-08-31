@@ -1,31 +1,31 @@
 <?php
     require_once "../../core/Application.php"; //Connect to wrs_db
 
-    $id = $_GET['id'] ?? null;
-    if (!$id) {
+    $userID = $_GET['userID'] ?? null;
+    if (!$userID) {
         header ('Location: ../user/index.php');
         exit;
     }
 
-    $statement = $DB_con->prepare('SELECT * FROM personnel WHERE id = :id');
-    $statement->bindValue(':id',$id);
+    $statement = $DB_con->prepare('SELECT * FROM personnel WHERE userID = :userID');
+    $statement->bindValue(':userID',$userID);
     $statement->execute();
     $personnel = $statement->fetch(PDO::FETCH_ASSOC);
 
     $errors = []; //Global variables
-    $fname = $personnel['fname'];
-    $lname = $personnel['lname'];
+    $firstname = $personnel['firstname'];
+    $lastname = $personnel['lastname'];
     $email = $personnel['email'];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') { //only do this if the method is POST
-        $fname = $_POST['fname'];
-        $lname = $_POST['lname'];
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
         $email = $_POST['email'];
 
-        if (!$fname) {
+        if (!$firstname) {
             $errors[] = 'First Name is required.';
         }
-        if (!$lname) {
+        if (!$lastname) {
             $errors[] = 'Last Name is required.';
         }
         if (!$email) {
@@ -33,19 +33,19 @@
         }
 
         if (empty($errors)) {
-            $usrimg = $_FILES['profilepic'] ?? null;
+            $usrimg = $_FILES['profpic'] ?? null;
             $usrimg = '';
   
             if ($usrimg && $usrimg['tmp_name']) {
-                $imgFile = $_FILES['profilepic']['name'];
-                $tmp_dir = $_FILES['profilepic']['tmp_name'];
-                $imgSize = $_FILES['profilepic']['size'];
+                $imgFile = $_FILES['profpic']['name'];
+                $tmp_dir = $_FILES['profpic']['tmp_name'];
+                $imgSize = $_FILES['profpic']['size'];
 
-                if ($personnel['profilepic']){
-                    unlink(__DIR__.'../user/picture/'.$personnel['profilepic']);
+                if ($personnel['profpic']){
+                    unlink(__DIR__.'../../assets/user_profile/'.$personnel['profpic']);
                 }
                     
-                $upload_dir = '../user/picture/'; // upload directory
+                $upload_dir = '../../assets/user_profile/'; // upload directory
                 $imgExt = strtolower(pathinfo($imgFile,PATHINFO_EXTENSION)); // get image extension
                 // valid image extensions
                 $valid_extensions = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
@@ -67,12 +67,12 @@
                 }
             }
             
-            $statement = $DB_con->prepare("UPDATE personnel SET profilepic = :profilepic, fname = :fname, lname = :lname, email = :email  WHERE id = :id");
-            $statement->bindValue(':profilepic',$usrimg);
-            $statement->bindValue(':fname',$fname);
-            $statement->bindValue(':lname',$lname);
+            $statement = $DB_con->prepare("UPDATE personnel SET profpic = :profpic, firstname = :firstname, lastname = :lastname, email = :email  WHERE userID = :userID");
+            $statement->bindValue(':profpic',$usrimg);
+            $statement->bindValue(':firstname',$firstname);
+            $statement->bindValue(':lastname',$lastname);
             $statement->bindValue(':email',$email);
-            $statement->bindValue(':id',$id);
+            $statement->bindValue(':userID',$userID);
             $statement->execute();
             header('Location: ../user/index.php');
         }

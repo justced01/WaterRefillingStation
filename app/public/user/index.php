@@ -33,18 +33,18 @@
                 <tr>
                     <th scope="row"><?php echo $i//increment, index start 1?></th>
                     <td>
-                        <?php if ($personnel['profilepic']): ?>
-                            <img src="./picture/<?php echo $personnel['profilepic'] ?>" class="thumb-image"> 
+                        <?php if ($personnel['profpic']): ?>
+                            <img src="../../assets/user_profile/<?php echo $personnel['profpic'] ?>" class="thumb-image"> 
                         <?php endif; ?>
                     </td>
-                    <td><?php echo $personnel['fname'] ?></td>
-                    <td><?php echo $personnel['lname'] ?></td>
+                    <td><?php echo $personnel['firstname'] ?></td>
+                    <td><?php echo $personnel['lastname'] ?></td>
                     <td><?php echo $personnel['email'] ?></td>
                     <td><?php echo $personnel['created_at'] ?></td>
                     <td>
-                        <a href="updatepersonnel.php?id=<?php echo $personnel['id'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
+                        <a href="updatepersonnel.php?userID=<?php echo $personnel['userID'] ?>" class="btn btn-sm btn-outline-primary">Edit</a>
                         <form style="display: inline-block" method="post" action="../../controllers/deletepersonnel_controller.php">
-                            <input type="hidden" name="id" value="<?php echo $personnel['id']?>">
+                            <input type="hidden" name="userID" value="<?php echo $personnel['userID']?>">
                             <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
                         </form>
                     </td>

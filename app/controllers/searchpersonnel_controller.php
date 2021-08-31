@@ -4,8 +4,8 @@
     //search
     $search = $_GET['search'] ?? '';
     if ($search) {
-        $statement = $DB_con->prepare('SELECT * FROM personnel WHERE lname LIKE :lname ORDER BY created_at DESC');
-        $statement->bindValue(':lname',"%$search%");
+        $statement = $DB_con->prepare('SELECT * FROM personnel WHERE lastname LIKE :lastname ORDER BY created_at DESC');
+        $statement->bindValue(':lastname',"%$search%");
     } else {
         $statement = $DB_con->prepare('SELECT * FROM personnel ORDER BY created_at DESC');
     }
